@@ -1,8 +1,14 @@
 package LightSwitchInterface;
-public class LEDBulb extends ToggleableObject implements LightBulb{
+
+/*
+    LED's have worst wattage but "Theroeticly" never die. 
+
+*/
+public class LEDBulb implements ToggleableObject, LightBulb{
     public static final int MIN_WATTAGE = 12;
     public static final int MAX_WATTAGE = 20;
     private int wattage;
+    private boolean isOn;
     
     public LEDBulb(int wattage){
         setWattage(wattage);
@@ -16,5 +22,17 @@ public class LEDBulb extends ToggleableObject implements LightBulb{
     
     @Override
     public final int getWattage(){ return wattage;} 
+
+    @Override
+    public void turnOn() {isOn = true;}
+
+    @Override
+    public void turnOff() {isOn = false;}
+     
+    @Override
+    public boolean isOn() {return isOn;}
+
+    @Override
+    public boolean isBurnedOut() {return false;}
 
 }
