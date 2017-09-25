@@ -14,11 +14,15 @@ public class LightSwitch {
         this.lamp = lamp;
     }
     
-    public void flipSwitchOn(){
+    public final Lamp getLamp(){
+        return lamp;
+    }
+    
+    public final void flipSwitchOn(){
         lamp.turnOn();
     }
     
-    public void flipSwithcOff(){
+    public final void flipSwithcOff(){
         lamp.turnOff();
     }
     
