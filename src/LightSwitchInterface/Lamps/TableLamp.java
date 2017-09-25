@@ -1,9 +1,8 @@
 package LightSwitchInterface.Lamps;
 
 import LightSwitchInterface.LightBulbs.LightBulb;
-import LightSwitchInterface.ToggleableObject;
 
-public class TableLamp implements ToggleableObject{
+public class TableLamp implements Lamp{
     public static final int MAX_WATTAGE = 100;
     private LightBulb lightBulb;
     
@@ -18,7 +17,15 @@ public class TableLamp implements ToggleableObject{
     
     public final LightBulb getLightBulb(){return lightBulb;}
 
-    public int getLuminocity(){return 0};
+    @Override
+    public int getTotalLumanoctyProvided(){
+        return lightBulb.getLumanocity();
+    }
+    
+    @Override
+    public int getTotalWattageConsumption(){
+       return lightBulb.getWattage();
+    }
     
     @Override
     public final void turnOn() {lightBulb.turnOn();}
@@ -27,6 +34,6 @@ public class TableLamp implements ToggleableObject{
     public final void turnOff() {lightBulb.turnOff();}
 
     @Override
-    public final boolean isOn() {return lightBulb.isOn() && !lightBulb.isBurnedOut();}
+    public final boolean isOn() {return lightBulb.isOn();}
         
 }

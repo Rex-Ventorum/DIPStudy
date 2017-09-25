@@ -1,7 +1,4 @@
 package LightSwitchInterface.LightBulbs;
-
-import LightSwitchInterface.ToggleableObject;
-
 /*
     Incandescent privde best wattage range but havge worst lifespan
 
@@ -36,14 +33,14 @@ public class IncandescentBulb implements LightBulb {
     public final void turnOff() {isOn = false;}
 
     @Override
-    public final boolean isOn() {return isOn;}
+    public final boolean isOn() {return isOn && !isBurnedOut();}
 
     @Override
     public final boolean isBurnedOut(){return lifeSpan <= 0;}
     
     @Override
     public final int getLumanocity() {
-        if(isOn) return lumans;
+        if(isOn()) return lumans;
         else return 0;
     }
 

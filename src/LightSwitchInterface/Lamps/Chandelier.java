@@ -1,10 +1,9 @@
 package LightSwitchInterface.Lamps;
 
 import LightSwitchInterface.LightBulbs.LightBulb;
-import LightSwitchInterface.ToggleableObject;
 
 
-public class Chandelier implements ToggleableObject{
+public class Chandelier implements Lamp{
     public static final int MAX_WATTAGE = 50;
     public static final int MAX_BULBS = 10;
     
@@ -25,6 +24,22 @@ public class Chandelier implements ToggleableObject{
     }
     
     public final LightBulb[] getLightBulbs(){return lightBulbs;}
+    
+    public int getTotalLumanoctyProvided(){
+        int totalLumans =0;
+        for(LightBulb bulb: lightBulbs){
+            totalLumans += bulb.getLumanocity();
+        }
+        return totalLumans;
+    }
+    
+    public int getTotalWattageConsumption(){
+        int totalWattage = 0;
+        for(LightBulb bulb : lightBulbs){
+            totalWattage += bulb.getWattage();
+        }
+        return totalWattage;
+    }
     
     @Override
     public final void turnOn() {

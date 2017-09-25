@@ -1,15 +1,25 @@
 package LightSwitchInterface;
 
+import LightSwitchInterface.Lamps.Lamp;
+
 public class LightSwitch {
-    private ToggleableObject toggleable;
+    private Lamp lamp;
     
-    public LightSwitch(ToggleableObject toggleable){
-        setToggleable(toggleable);
+    public LightSwitch(Lamp lamp){
+        setLamp(lamp);
     }
     
-    public final void setToggleable(ToggleableObject toggleable){
-        if(toggleable == null) throw new IllegalArgumentException("ToggleableObject must be non null");
-        this.toggleable = toggleable;
+    public final void setLamp(Lamp lamp){
+        if(lamp == null) throw new IllegalArgumentException("Lamp must be non null");
+        this.lamp = lamp;
+    }
+    
+    public void flipSwitchOn(){
+        lamp.turnOn();
+    }
+    
+    public void flipSwithcOff(){
+        lamp.turnOff();
     }
     
    
