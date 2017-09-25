@@ -8,11 +8,13 @@ public class HalogenBulb implements LightBulb{
     public static final int MIN_WATTAGE = 28;
     public static final int MAX_WATTAGE = 72;
     private int wattage;
+    private int lumans;
     private boolean isOn;
     private int lifeSpan;
     
-    public HalogenBulb(int wattage){
+    public HalogenBulb(int wattage, int lumans){
         setWattage(wattage);
+        setLumanocity(lumans);
         lifeSpan = 200;
     }
     
@@ -37,4 +39,15 @@ public class HalogenBulb implements LightBulb{
     @Override
     public final boolean isBurnedOut() {return lifeSpan <= 0;}
     
+    @Override
+    public final int getLumanocity() {
+        if(isOn) return lumans;
+        else return 0;
+    }
+
+    @Override
+    public final void setLumanocity(int lumans) {
+      if(lumans < 0 || lumans > LightBulb.MAX_LUMANS) throw new IllegalArgumentException("Lumans Must Be between 0-" + LightBulb.MAX_LUMANS);
+      this.lumans = lumans;
+    }
 }

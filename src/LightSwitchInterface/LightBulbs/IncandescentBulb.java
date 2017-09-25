@@ -6,15 +6,17 @@ import LightSwitchInterface.ToggleableObject;
     Incandescent privde best wattage range but havge worst lifespan
 
 */
-public class IncandescentBulb implements ToggleableObject {
+public class IncandescentBulb implements LightBulb {
     public static final int MIN_WATTAGE = 40;
     public static final int MAX_WATTAGE = 100;
     private int wattage;
+    private int lumans;
     private boolean isOn;
     private int lifeSpan;
     
-    public IncandescentBulb(int wattage){
+    public IncandescentBulb(int wattage, int lumans){
         setWattage(wattage);
+        setLumanocity(lumans);
         lifeSpan = 100;
     }
     
@@ -38,5 +40,17 @@ public class IncandescentBulb implements ToggleableObject {
 
     @Override
     public final boolean isBurnedOut(){return lifeSpan <= 0;}
+    
+    @Override
+    public final int getLumanocity() {
+        if(isOn) return lumans;
+        else return 0;
+    }
+
+    @Override
+    public final void setLumanocity(int lumans) {
+      if(lumans < 0 || lumans > LightBulb.MAX_LUMANS) throw new IllegalArgumentException("Lumans Must Be between 0-" + LightBulb.MAX_LUMANS);
+      this.lumans = lumans;
+    }
     
 }

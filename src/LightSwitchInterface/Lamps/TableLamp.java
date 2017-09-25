@@ -18,6 +18,9 @@ public class TableLamp implements ToggleableObject{
     
     public final LightBulb getLightBulb(){return lightBulb;}
 
+    public int getLuminocity(){return 0};
+    
+    @Override
     public final void turnOn() {lightBulb.turnOn();}
 
     @Override
