@@ -1,6 +1,6 @@
 package LightSwitchInterface;
 
-public interface LightBulbInterface {
+public interface LightBulb {
     public abstract int getWattage();
     public abstract void setWattage(int wattage);
 }

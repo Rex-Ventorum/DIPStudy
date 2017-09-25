@@ -1,10 +1,10 @@
 package LightSwitchInterface;
-public class LEDBubl extends ToggleableObject implements LightBulbInterface{
+public class LEDBulb extends ToggleableObject implements LightBulb{
     public static final int MIN_WATTAGE = 12;
     public static final int MAX_WATTAGE = 20;
     private int wattage;
     
-    public LEDBubl(int wattage){
+    public LEDBulb(int wattage){
         setWattage(wattage);
     }
     
