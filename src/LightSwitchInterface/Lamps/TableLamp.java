@@ -1,4 +1,7 @@
-package LightSwitchInterface;
+package LightSwitchInterface.Lamps;
+
+import LightSwitchInterface.LightBulbs.LightBulb;
+import LightSwitchInterface.ToggleableObject;
 
 public class TableLamp implements ToggleableObject{
     public static final int MAX_WATTAGE = 100;

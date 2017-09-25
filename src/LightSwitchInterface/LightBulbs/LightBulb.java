@@ -1,4 +1,6 @@
-package LightSwitchInterface;
+package LightSwitchInterface.LightBulbs;
+
+import LightSwitchInterface.ToggleableObject;
 
 public interface LightBulb extends ToggleableObject{
     public abstract int getWattage();

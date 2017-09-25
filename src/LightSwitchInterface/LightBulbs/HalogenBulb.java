@@ -1,19 +1,19 @@
-package LightSwitchInterface;
+package LightSwitchInterface.LightBulbs;
 
-/*
-    Incandescent privde best wattage range but havge worst lifespan
-
+/**
+ * Halogen Bulbs have better lifespans than Incandescent but provide less wattage
+ * 
 */
-public class IncandescentBulb implements ToggleableObject {
-    public static final int MIN_WATTAGE = 40;
-    public static final int MAX_WATTAGE = 100;
+public class HalogenBulb implements LightBulb{
+    public static final int MIN_WATTAGE = 28;
+    public static final int MAX_WATTAGE = 72;
     private int wattage;
     private boolean isOn;
     private int lifeSpan;
     
-    public IncandescentBulb(int wattage){
+    public HalogenBulb(int wattage){
         setWattage(wattage);
-        lifeSpan = 100;
+        lifeSpan = 200;
     }
     
     @Override
@@ -26,7 +26,7 @@ public class IncandescentBulb implements ToggleableObject {
     public final int getWattage(){ return wattage;} 
 
     @Override
-    public final void turnOn() {isOn = true; lifeSpan--;}
+    public final void turnOn() {isOn = true; lifeSpan--; }
 
     @Override
     public final void turnOff() {isOn = false;}
@@ -35,6 +35,6 @@ public class IncandescentBulb implements ToggleableObject {
     public final boolean isOn() {return isOn;}
 
     @Override
-    public final boolean isBurnedOut(){return lifeSpan <= 0;}
+    public final boolean isBurnedOut() {return lifeSpan <= 0;}
     
 }

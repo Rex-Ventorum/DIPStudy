@@ -1,17 +1,21 @@
-package LightSwitchInterface;
+package LightSwitchInterface.LightBulbs;
+
+import LightSwitchInterface.ToggleableObject;
 
 /*
-    LED's have worst wattage but "Theroeticly" never die. 
+    Incandescent privde best wattage range but havge worst lifespan
 
 */
-public class LEDBulb implements LightBulb{
-    public static final int MIN_WATTAGE = 12;
-    public static final int MAX_WATTAGE = 20;
+public class IncandescentBulb implements ToggleableObject {
+    public static final int MIN_WATTAGE = 40;
+    public static final int MAX_WATTAGE = 100;
     private int wattage;
     private boolean isOn;
+    private int lifeSpan;
     
-    public LEDBulb(int wattage){
+    public IncandescentBulb(int wattage){
         setWattage(wattage);
+        lifeSpan = 100;
     }
     
     @Override
@@ -24,15 +28,15 @@ public class LEDBulb implements LightBulb{
     public final int getWattage(){ return wattage;} 
 
     @Override
-    public final void turnOn() {isOn = true;}
+    public final void turnOn() {isOn = true; lifeSpan--;}
 
     @Override
     public final void turnOff() {isOn = false;}
-     
+
     @Override
     public final boolean isOn() {return isOn;}
 
     @Override
-    public final boolean isBurnedOut() {return false;}
-
+    public final boolean isBurnedOut(){return lifeSpan <= 0;}
+    
 }

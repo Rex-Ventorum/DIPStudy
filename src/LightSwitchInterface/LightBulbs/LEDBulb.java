@@ -1,19 +1,17 @@
-package LightSwitchInterface;
+package LightSwitchInterface.LightBulbs;
 
-/**
- * Halogen Bulbs have better lifespans than Incandescent but provide less wattage
- * 
+/*
+    LED's have worst wattage but "Theroeticly" never die. 
+
 */
-public class HalogenBulb implements LightBulb{
-    public static final int MIN_WATTAGE = 28;
-    public static final int MAX_WATTAGE = 72;
+public class LEDBulb implements LightBulb{
+    public static final int MIN_WATTAGE = 12;
+    public static final int MAX_WATTAGE = 20;
     private int wattage;
     private boolean isOn;
-    private int lifeSpan;
     
-    public HalogenBulb(int wattage){
+    public LEDBulb(int wattage){
         setWattage(wattage);
-        lifeSpan = 200;
     }
     
     @Override
@@ -26,15 +24,15 @@ public class HalogenBulb implements LightBulb{
     public final int getWattage(){ return wattage;} 
 
     @Override
-    public final void turnOn() {isOn = true; lifeSpan--; }
+    public final void turnOn() {isOn = true;}
 
     @Override
     public final void turnOff() {isOn = false;}
-
+     
     @Override
     public final boolean isOn() {return isOn;}
 
     @Override
-    public final boolean isBurnedOut() {return lifeSpan <= 0;}
-    
+    public final boolean isBurnedOut() {return false;}
+
 }
