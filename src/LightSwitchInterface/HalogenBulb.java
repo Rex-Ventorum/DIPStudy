@@ -4,7 +4,7 @@ package LightSwitchInterface;
  * Halogen Bulbs have better lifespans than Incandescent but provide less wattage
  * 
 */
-public class HalogenBulb implements ToggleableObject,LightBulb{
+public class HalogenBulb implements LightBulb{
     public static final int MIN_WATTAGE = 28;
     public static final int MAX_WATTAGE = 72;
     private int wattage;

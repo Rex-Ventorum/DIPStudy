@@ -4,7 +4,7 @@ package LightSwitchInterface;
     Incandescent privde best wattage range but havge worst lifespan
 
 */
-public class IncandescentBulb implements LightBulb,ToggleableObject {
+public class IncandescentBulb implements ToggleableObject {
     public static final int MIN_WATTAGE = 40;
     public static final int MAX_WATTAGE = 100;
     private int wattage;
