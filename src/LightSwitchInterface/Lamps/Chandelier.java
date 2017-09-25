@@ -25,7 +25,7 @@ public class Chandelier implements Lamp{
     
     public final LightBulb[] getLightBulbs(){return lightBulbs;}
     
-    public int getTotalLumanoctyProvided(){
+    public final int getTotalLumanoctyProvided(){
         int totalLumans =0;
         for(LightBulb bulb: lightBulbs){
             totalLumans += bulb.getLumanocity();
@@ -33,7 +33,7 @@ public class Chandelier implements Lamp{
         return totalLumans;
     }
     
-    public int getTotalWattageConsumption(){
+    public final int getTotalWattageConsumption(){
         int totalWattage = 0;
         for(LightBulb bulb : lightBulbs){
             totalWattage += bulb.getWattage();

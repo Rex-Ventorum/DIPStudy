@@ -18,11 +18,11 @@ public class LampReportService {
         return lamp;
     }
     
-    public void printTotalLumanocity(){
+    public  final void printTotalLumanocity(){
         System.out.println("This Lamp Is Providing " + lamp.getTotalLumanoctyProvided() + " lumans of light!");
     }
     
-    public void printTotalWattageConsumption(){
+    public final void printTotalWattageConsumption(){
         System.out.println("This Lamp Consumes " + lamp.getTotalWattageConsumption() + " watts when turned on!");
     }
 }

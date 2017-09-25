@@ -18,12 +18,12 @@ public class TableLamp implements Lamp{
     public final LightBulb getLightBulb(){return lightBulb;}
 
     @Override
-    public int getTotalLumanoctyProvided(){
+    public final int getTotalLumanoctyProvided(){
         return lightBulb.getLumanocity();
     }
     
     @Override
-    public int getTotalWattageConsumption(){
+    public final int getTotalWattageConsumption(){
        return lightBulb.getWattage();
     }
     
